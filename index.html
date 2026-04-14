@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGNEXUS | Soluciones Tecnológicas Empresariales para PYMEs en Quito</title>
+    <meta name="description"
+        content="Soluciones completas de conectividad, telefonía IP, WiFi profesional y monitoreo IoT para empresas en Quito. Expertos en infraestructura tecnológica.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #001f3f;
+            --secondary: #0074d9;
+            --accent: #ff4136;
+            --light-bg: #f8f9fa;
+            --text-dark: #1a1a1a;
+            --text-gray: #555;
+            --border: #e0e0e0;
+            --success: #2ecc40;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #fff, #0074d9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-header {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .cta-header a {
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-btn {
+            background: var(--success);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .whatsapp-btn:hover {
+            background: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 204, 64, 0.3);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #003d66 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 116, 217, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #b3d9ff;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #ff2500;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 65, 54, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: transparent;
+            color: white;
+        }
+
+        .hero-badge {
+            background: rgba(0, 116, 217, 0.2);
+            border: 1px solid rgba(0, 116, 217, 0.5);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Problemas Section */
+        .problemas {
+            background: var(--light-bg);
+        }
+
+        .problemas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .problema-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .problema-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .problema-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .problema-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Servicios Section */
+        .servicios {
+            background: white;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .servicio-card {
+            background: white;
+            border: 2px solid var(--border);
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .servicio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+
+        .servicio-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .servicio-card:hover {
+            border-color: var(--secondary);
+            box-shadow: 0 8px 20px rgba(0, 116, 217, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .servicio-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .servicio-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .servicio-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Diferenciadores */
+        .diferenciadores {
+            background: var(--light-bg);
+        }
+
+        .diferenciadores-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .diff-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .diff-card {
+            padding: 2rem;
+            border-radius: 8px;
+            background: white;
+        }
+
+        .diff-card.nosotros {
+            border: 3px solid var(--success);
+            background: rgba(46, 204, 64, 0.05);
+        }
+
+        .diff-card.otros {
+            border: 2px solid var(--border);
+        }
+
+        .diff-card h4 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .diff-list {
+            list-style: none;
+        }
+
+        .diff-list li {
+            padding: 0.8rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .diff-list li:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .x-icon {
+            color: #999;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Oferta */
+        .oferta {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            text-align: center;
+        }
+
+        .oferta-badge {
+            display: inline-block;
+            background: var(--accent);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .oferta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .oferta-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+            list-style: none;
+        }
+
+        .oferta-list li {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .oferta-list li strong {
+            font-size: 1.1rem;
+        }
+
+        .oferta-cta {
+            margin-top: 2.5rem;
+        }
+
+        /* Formulario */
+        .formulario-section {
+            background: white;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 2px solid var(--border);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(0, 116, 217, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .form-submit:hover {
+            background: #ff2500;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 65, 54, 0.3);
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .form-message.success {
+            background: rgba(46, 204, 64, 0.2);
+            color: #27ae60;
+            border: 1px solid #27ae60;
+        }
+
+        .form-message.error {
+            background: rgba(255, 65, 54, 0.2);
+            color: #ff4136;
+            border: 1px solid #ff4136;
+        }
+
+        /* FAQ */
+        .faq {
+            background: var(--light-bg);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary);
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--light-bg);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section a {
+            color: #b3d9ff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-contact {
+            font-size: 1rem;
+        }
+
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .diff-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .oferta h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-header {
+                gap: 0.5rem;
+            }
+
+            .whatsapp-btn {
+                padding: 0.5rem 1rem;
+            }
+
+            .whatsapp-btn span {
+                display: none;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            .servicios-grid,
+            .problemas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+                min-height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .oferta-list {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 1rem;
+            }
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        /* Sticky WhatsApp */
+        .whatsapp-sticky {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--success);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 50;
+            box-shadow: 0 4px 12px rgba(46, 204, 64, 0.3);
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-sticky:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(46, 204, 64, 0.4);
+        }
+
+        @media (max-width: 480px) {
+            .whatsapp-sticky {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">AGNEXUS</div>
+        <div class="cta-header">
+            <a href="https://wa.me/593992217314?text=Hola%20AGNEXUS!%20Me%20interesa%20conocer%20sobre%20sus%20soluciones%20tecnológicas"
+                target="_blank" class="whatsapp-btn">
+                <span>💬</span>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+        <button class="nav-toggle">☰</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">✓ Confiabilidad garantizada | Soporte 24/7</div>
+            <h1>Conectividad Empresarial que Impulsa tu Negocio</h1>
+            <p class="hero-subtitle">Implementamos soluciones tecnológicas empresariales que mejoran la conectividad, la
+                comunicación y el control operativo de tu negocio</p>
+            <div class="hero-cta">
+                <a href="#formulario" class="btn btn-primary">Solicita tu Diagnóstico Gratis</a>
+                <a href="https://wa.me/593992217314?text=Hola%20AGNEXUS!%20Quiero%20agendar%20una%20consulta"
+                    target="_blank" class="btn btn-secondary">Hablar con un Experto</a>
+            </div>
+            <p style="font-size: 0.9rem; color: #b3d9ff; margin-top: 2rem;">📞 +593 99 221 7314 | 📧
+                contacto@agnexus.com</p>
+        </div>
+    </section>
+
+    <!-- Problemas que Resolvemos -->
+    <section class="problemas">
+        <h2 class="section-title">¿Cuáles son tus Desafíos?</h2>
+        <p class="section-subtitle">Identificamos y resolvemos los problemas de conectividad, comunicación y control que
+            limitan el crecimiento de tu empresa</p>
+        <div class="problemas-grid">
+            <div class="problema-card">
+                <h3>⚠️ Caídas de Conectividad</h3>
+                <p>Las interrupciones en tu red paralizan operaciones, pierdes ventas y clientes se frustran. Necesitas
+                    una red confiable.</p>
+            </div>
+            <div class="problema-card">
+                <h3>📞 Comunicación Interna Ineficiente</h3>
+                <p>Sin telefonía integrada, los procesos de comunicación son lentos y costosos. La coordinación entre
+                    equipos se sufre.</p>
+            </div>
+            <div class="problema-card">
+                <h3>🌐 WiFi Débil y Lento</h3>
+                <p>Clientes se desconectan, tus empleados boguean, productividad cae. La cobertura actual no soporta tus
+                    necesidades.</p>
+            </div>
+            <div class="problema-card">
+                <h3>👁️ Sin Visibilidad de Operaciones</h3>
+                <p>No sabes qué está pasando en tus sucursales o puntos remotos. Falta monitoreo en tiempo real de
+                    equipos y sensores.</p>
+            </div>
+            <div class="problema-card">
+                <h3>💸 Gastos Ocultos en TI</h3>
+                <p>Reparaciones urgentes, equipos obsoletos, servicios descoordinados. Tu inversión en tecnología no es
+                    optimizada.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="servicios">
+        <h2 class="section-title">Nuestras Soluciones</h2>
+        <p class="section-subtitle">Servicios profesionales diseñados para empresas como la tuya</p>
+        <div class="servicios-grid">
+            <div class="servicio-card">
+                <div class="servicio-icon">🌐</div>
+                <h3>Redes Empresariales</h3>
+                <p>Infraestructura de red robusta, escalable y segura. Implementamos switches, routers y sistemas de
+                    backup para garantizar disponibilidad continua.</p>
+            </div>
+            <div class="servicio-card">
+                <div class="servicio-icon">📱</div>
+                <h3>Telefonía IP / PBX</h3>
+                <p>Sistemas de telefonía moderna integrada. Reduce costos de llamadas, mejora productividad con
+                    transferencias inteligentes y registros empresariales.</p>
+            </div>
+            <div class="servicio-card">
+                <div class="servicio-icon">📡</div>
+                <h3>WiFi Profesional</h3>
+                <p>Redes inalámbricas de alta capacidad diseñadas para soportar múltiples usuarios simultáneos.
+                    Cobertura total, segura y confiable.</p>
+            </div>
+            <div class="servicio-card">
+                <div class="servicio-icon">🔌</div>
+                <h3>Cableado Estructurado</h3>
+                <p>Instalación de cableado Cat6/Cat6A con estándares internacionales. Garantizamos velocidad,
+                    durabilidad y fácil mantenimiento.</p>
+            </div>
+            <div class="servicio-card">
+                <div class="servicio-icon">📊</div>
+                <h3>Monitoreo IoT / LoRaWAN</h3>
+                <p>Plataformas de monitoreo remoto para sensores, equipos y procesos. Datos en tiempo real para
+                    decisiones estratégicas e inmediatas.</p>
+            </div>
+            <div class="servicio-card">
+                <div class="servicio-icon">🛡️</div>
+                <h3>Seguridad & Soporte</h3>
+                <p>Firewall, autenticación, backup y soporte técnico 24/7. Protegemos tu inversión tecnológica y
+                    garantizamos continuidad empresarial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciadores -->
+    <section class="diferenciadores">
+        <h2 class="section-title">¿Por qué elegir AGNEXUS?</h2>
+        <p class="section-subtitle">Somos más que un proveedor, somos tu socio tecnológico</p>
+        <div class="diferenciadores-container">
+            <div class="diff-comparison">
+                <div class="diff-card nosotros">
+                    <h4>✓ AGNEXUS (Nosotros)</h4>
+                    <ul class="diff-list">
+                        <li><span class="check-icon">✓</span> <strong>Diagnóstico personalizado</strong> de tu
+                            infraestructura</li>
+                        <li><span class="check-icon">✓</span> <strong>Soluciones a medida</strong> para tu negocio</li>
+                        <li><span class="check-icon">✓</span> <strong>Instalación profesional</strong> con garantía</li>
+                        <li><span class="check-icon">✓</span> <strong>Monitoreo 24/7</strong> y soporte proactivo</li>
+                        <li><span class="check-icon">✓</span> <strong>Capacitación</strong> del equipo incluida</li>
+                        <li><span class="check-icon">✓</span> <strong>Planes de respuesta</strong> ante emergencias</li>
+                        <li><span class="check-icon">✓</span> <strong>ROI comprobable</strong> en 3-6 meses</li>
+                    </ul>
+                </div>
+                <div class="diff-card otros">
+                    <h4>✗ Técnicos Informales</h4>
+                    <ul class="diff-list">
+                        <li><span class="x-icon">✗</span> Solo arreglan cuando algo falla</li>
+                        <li><span class="x-icon">✗</span> Soluciones genéricas, sin análisis</li>
+                        <li><span class="x-icon">✗</span> Sin garantía ni respaldo formal</li>
+                        <li><span class="x-icon">✗</span> Disponibilidad limitada e impredecible</li>
+                        <li><span class="x-icon">✗</span> Sin documentación ni seguimiento</li>
+                        <li><span class="x-icon">✗</span> Costos escondidos y emergencias caras</li>
+                        <li><span class="x-icon">✗</span> Difícil evaluar resultados</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Oferta Irresistible -->
+    <section class="oferta">
+        <div class="oferta-badge">🎯 OFERTA LIMITADA PARA NUEVOS CLIENTES</div>
+        <h2>Programa de Implementación Acelerada</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">Inicia tu transformación digital con nuestro plan integral
+        </p>
+
+        <ul class="oferta-list">
+            <li>
+                <strong>✓ Diagnóstico Técnico Gratuito</strong><br>
+                Valorado en $400. Identificamos oportunidades de mejora.
+            </li>
+            <li>
+                <strong>✓ Plan de Implementación a Medida</strong><br>
+                Sin costo. Adaptado a tu presupuesto y timeline.
+            </li>
+            <li>
+                <strong>✓ Soporte Prioritario 90 Días</strong><br>
+                Apoyo continuo durante la implementación.
+            </li>
+            <li>
+                <strong>✓ Capacitación de Personal Incluida</strong><br>
+                Tu equipo domina la nueva infraestructura.
+            </li>
+        </ul>
+
+        <p style="font-size: 1.1rem; margin-top: 2rem;">
+            <strong>Válido para las primeras 5 empresas en contactarse este mes</strong>
+        </p>
+        <div class="oferta-cta">
+            <a href="https://wa.me/593992217314?text=Quiero%20aprovechar%20la%20oferta%20limitada%20de%20AGNEXUS"
+                class="btn btn-primary">Solicitar Ahora</a>
+        </div>
+    </section>
+
+    <!-- Formulario -->
+    <section class="formulario-section" id="formulario">
+        <h2 class="section-title">Consigue tu Diagnóstico Gratuito</h2>
+        <p class="section-subtitle">Completa el formulario y nos pondremos en contacto en 24 horas</p>
+
+        <div class="form-container">
+            <form id="leadForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo *</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="empresa">Nombre de la Empresa *</label>
+                    <input type="text" id="empresa" name="empresa" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo Electrónico *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono/WhatsApp *</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="servicio">¿Qué te interesa? *</label>
+                    <select id="servicio" name="servicio"
+                        style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 5px; font-family: inherit;"
+                        required>
+                        <option value="">-- Selecciona una opción --</option>
+                        <option value="Redes Empresariales">Redes Empresariales</option>
+                        <option value="Telefonía IP/PBX">Telefonía IP / PBX</option>
+                        <option value="WiFi Profesional">WiFi Profesional</option>
+                        <option value="Cableado Estructurado">Cableado Estructurado</option>
+                        <option value="Monitoreo IoT/LoRaWAN">Monitoreo IoT / LoRaWAN</option>
+                        <option value="Múltiples servicios">Múltiples servicios</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Cuéntanos sobre tu negocio</label>
+                    <textarea id="mensaje" name="mensaje"
+                        placeholder="Tipo de empresa, número de empleados, desafíos actuales..."></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">Recibir Diagnóstico Gratuito</button>
+                <div class="form-message" id="formMessage"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <p class="section-subtitle">Resolvemos tus dudas</p>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Cuánto cosan las soluciones de AGNEXUS?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Los costos varían según tus necesidades específicas. Ofrecemos planes desde $1,500 hasta soluciones
+                    empresariales complejas. Realizamos un diagnóstico gratuito para ofrecerte un presupuesto exacto
+                    adaptado a tu infraestructura actual.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Cuánto tiempo toma la implementación?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Depende de la complejidad. Desde 3-5 días para pequeños proyectos, hasta 4-8 semanas para
+                    instalaciones complejas. Coordinamos con tu empresa para minimizar impacto operativo y ejecutamos
+                    generalmente fuera de horarios.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Proporcionan soporte después de la instalación?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Sí. Ofrecemos soporte 24/7, planes SLA con tiempo de respuesta garantizado (1 hora en emergencias),
+                    y monitoreo proactivo de tu infraestructura. También incluimos sesiones de capacitación para tu
+                    equipo.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Garantizan disponibilidad de la red?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Diseñamos sistemas con redundancia y backup automático. Generalmente logramos 99.5%+ de
+                    disponibilidad. Ofrecemos SLA con garantía de disponibilidad y compensación si no se cumple.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Ustedes también venden equipos?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Trabajamos con proveedores certificados de marcas líderes (Cisco, Ubiquiti, Mikrotik). Facilitamos
+                    adquisición de equipos, pero nuestro enfoque es la solución integral, no solo vender hardware.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Cubren otras ciudades además de Quito?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Tenemos base en Quito. Para ciudades cercanas (Pichincha, norte de Ecuador) viajamos. Para ciudades
+                    distantes, coordinamos con partners locales verificados. Consulta tu ubicación.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Puedo ver referencias de proyectos previos?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Contáctanos y compartimos casos de éxito y referencias de clientes satisfechos en empresas de tu
+                    tamaño y sector. También disponibles testimonios y resultados medibles.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>AGNEXUS</h4>
+                <p style="color: #b3d9ff; margin-bottom: 1rem;">Soluciones Tecnológicas Empresariales en Quito, Ecuador
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <div class="footer-contact">
+                    <p>📞 +593 99 221 7314</p>
+                    <p>📧 contacto@agnexus.com</p>
+                    <p>📍 Quito, Ecuador</p>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Servicios</h4>
+                <a href="#servicios">Redes Empresariales</a>
+                <a href="#servicios">Telefonía IP</a>
+                <a href="#servicios">WiFi Profesional</a>
+                <a href="#servicios">Monitoreo IoT</a>
+                <a href="#servicios">Soporte 24/7</a>
+            </div>
+        </div>
+        <div class="footer-divider">
+            <p style="font-size: 0.9rem; color: #b3d9ff;">© 2024 AGNEXUS. Todos los derechos reservados. | Soluciones de
+                conectividad empresarial para PyMEs</p>
+        </div>
+    </footer>
+
+    <!-- Botón flotante WhatsApp -->
+    <a href="https://wa.me/593992217314?text=Hola%20AGNEXUS!%20Me%20interesa%20conocer%20sobre%20sus%20soluciones"
+        target="_blank" class="whatsapp-sticky" title="Contactar por WhatsApp">
+        💬
+    </a>
+
+    <script>
+        // Manejo del Formulario
+        const leadForm = document.getElementById('leadForm');
+        const formMessage = document.getElementById('formMessage');
+
+        leadForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const empresa = document.getElementById('empresa').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+            const servicio = document.getElementById('servicio').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            // Validación básica
+            if (!nombre || !empresa || !email || !telefono || !servicio) {
+                showMessage('Por favor completa todos los campos requeridos', 'error');
+                return;
+            }
+
+            // Aquí normalmente enviarías los datos a tu servidor
+            // Por ahora, simularemos una respuesta exitosa
+            const emailText = `
+Nuevo Lead Captado:
+Nombre: ${nombre}
+Empresa: ${empresa}
+Email: ${email}
+Teléfono: ${telefono}
+Servicio de Interés: ${servicio}
+Mensaje: ${mensaje}
+            `;
+
+            // Simular envío a WhatsApp
+            const whatsappMessage = `Hola AGNEXUS, soy ${nombre} de ${empresa}. Estoy interesado en ${servicio}. Mi correo es ${email} y teléfono ${telefono}.`;
+
+            // Mostrar mensaje de éxito
+            showMessage('¡Perfecto! Hemos recibido tu información. Nos contactaremos pronto. Mientras tanto, también puedes escribirnos por WhatsApp.', 'success');
+
+            // Limpiar formulario
+            leadForm.reset();
+
+            // Redirigir a WhatsApp después de 2 segundos (opcional)
+            setTimeout(() => {
+                window.open(`https://wa.me/593992217314?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+            }, 2000);
+        });
+
+        function showMessage(text, type) {
+            formMessage.textContent = text;
+            formMessage.className = `form-message ${type}`;
+            formMessage.style.display = 'block';
+
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Cerrar todos menos el actual
+                faqItems.forEach(i => i.classList.remove('active'));
+
+                // Abrir el actual si no estaba abierto
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animación al scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.problema-card, .servicio-card, .faq-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Envío de datos a servidor (ejemplo con endpoint)
+        // En producción, cambiarías esto por tu API real
+        async function enviarDatos(datos) {
+            try {
+                // Reemplaza con tu endpoint real
+                const response = await fetch('https://tu-servidor.com/api/leads', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(datos)
+                });
+
+                if (response.ok) {
+                    return true;
+                }
+            } catch (error) {
+                console.error('Error al enviar datos:', error);
+            }
+            return false;
+        }
+    </script>
+</body>
+
+</html>
