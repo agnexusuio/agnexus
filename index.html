@@ -149,6 +149,13 @@
             cursor: pointer;
         }
 
+        /* Logo in Header */
+        .logo-mark {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--primary-dark) 100%);
@@ -866,24 +873,7 @@
     <!-- Header -->
     <header>
         <a href="#" class="logo">
-            <svg class="logo-mark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="AGNEXUS logo">
-                <defs>
-                    <linearGradient id="logoGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#53b8ff" />
-                        <stop offset="100%" stop-color="#1b4ec8" />
-                    </linearGradient>
-                    <linearGradient id="logoGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="#1b4ec8" />
-                        <stop offset="100%" stop-color="#53b8ff" />
-                    </linearGradient>
-                </defs>
-                <g fill="none" stroke-linecap="round" stroke-width="20">
-                    <path d="M50 30 H120 A20 20 0 0 1 140 50 V90" stroke="url(#logoGrad1)" />
-                    <path d="M170 50 V120 A20 20 0 0 1 150 140 H110" stroke="url(#logoGrad2)" />
-                    <path d="M150 170 H80 A20 20 0 0 1 60 150 V110" stroke="url(#logoGrad1)" />
-                    <path d="M30 150 V80 A20 20 0 0 1 50 60 H90" stroke="url(#logoGrad2)" />
-                </g>
-            </svg>
+            <img src="assets/images/agnexus-logo.png" alt="AGNEXUS logo" class="logo-mark" />
             <span class="logo-text">
                 <span class="logo-main">AGNEXUS</span>
                 <span class="logo-subtitle">NETWORKS</span>
