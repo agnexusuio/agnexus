@@ -144,6 +144,17 @@
             box-shadow: 0 10px 24px rgba(8, 22, 45, 0.12);
         }
 
+        .email-btn span:first-child,
+        .whatsapp-btn span:first-child {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-text {
+            display: inline;
+        }
+
         .whatsapp-btn {
             background: linear-gradient(135deg, var(--accent), var(--accent-light));
             color: white;
@@ -764,11 +775,13 @@
                 gap: 0.5rem;
             }
 
+            .email-btn,
             .whatsapp-btn {
-                padding: 0.5rem 1rem;
+                padding: 0.5rem 0.9rem;
+                min-width: 48px;
             }
 
-            .whatsapp-btn span {
+            .btn-text {
                 display: none;
             }
 
@@ -927,11 +940,14 @@
             </span>
         </a>
         <div class="cta-header">
-            <a href="mailto:contacto@agnexusuio.com" class="email-btn">✉️ contacto@agnexusuio.com</a>
+            <a href="mailto:contacto@agnexusuio.com" class="email-btn">
+                <span>✉️</span>
+                <span class="btn-text">contacto@agnexusuio.com</span>
+            </a>
             <a href="https://wa.me/593992217314?text=Hola%20AGNEXUS!%20Me%20interesa%20conocer%20sobre%20sus%20soluciones%20tecnológicas"
                 target="_blank" class="whatsapp-btn">
                 <span>💬</span>
-                <span>WhatsApp</span>
+                <span class="btn-text">WhatsApp</span>
             </a>
         </div>
         <button class="nav-toggle">☰</button>
